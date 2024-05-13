@@ -12,6 +12,7 @@ keywords = ["qq", "protocol", "android", "mirai"]
 [features]
 default = []
 image-detail = ["image"]
+rustls = ["reqwest/rustls-tls"]
 
 [dependencies]
 ricq-core = { path = "../ricq-core" }
@@ -30,5 +31,5 @@ serde = { workspace = true, features = ["derive"] }
 tokio = { workspace = true, features = ["rt", "macros", "net", "time"] }
 tokio-util = { workspace = true, features = ["codec"] }
 tracing.workspace = true
-reqwest = { workspace = true, features = ["json"] }
+reqwest = { workspace = true, default-features = false, features = ["json"] }
 async-recursion = "1.0"
